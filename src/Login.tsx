@@ -10,7 +10,6 @@ export default function Login({ onLoginSuccess }: LoginProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nombre, setNombre] = useState('');
-  const [rol, setRol] = useState<'alumno' | 'profesor'>('alumno');
   const [errorMsg, setErrorMsg] = useState('');
   const [cargando, setCargando] = useState(false);
 
