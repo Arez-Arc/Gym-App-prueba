@@ -27,7 +27,6 @@ export default function Login({ onLoginSuccess }: LoginProps) {
           options: {
             data: {
               nombre,
-              rol,
             },
           },
         });
@@ -36,7 +35,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email,
-          password,
+          password, 
         });
         if (error) throw error;
         onLoginSuccess();
@@ -79,33 +78,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                 />
               </div>
 
-              <div>
-                <label className="block text-xs font-semibold text-slate-300 uppercase mb-1">Tipo de Usuario</label>
-                <div className="flex gap-4">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="rol"
-                      value="alumno"
-                      checked={rol === 'alumno'}
-                      onChange={() => setRol('alumno')}
-                      className="accent-emerald-500"
-                    />
-                    <span>Alumno</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="radio"
-                      name="rol"
-                      value="profesor"
-                      checked={rol === 'profesor'}
-                      onChange={() => setRol('profesor')}
-                      className="accent-emerald-500"
-                    />
-                    <span>Profesor</span>
-                  </label>
-                </div>
-              </div>
+            
             </>
           )}
 
